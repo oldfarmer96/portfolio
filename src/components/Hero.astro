@@ -1,0 +1,160 @@
+---
+import { personal } from "../data/personal";
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+>
+  <!-- Background Animated Blob -->
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute top-1/4 -left-20 w-72 h-72 bg-indigo-500/20 rounded-full blur-[100px] animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] animate-pulse transition-all duration-1000"
+    >
+    </div>
+  </div>
+
+  <div
+    class="container mx-auto px-6 relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-12"
+  >
+    <div class="flex-1 text-center lg:text-left animate-fade-in-up">
+      <div
+        class="inline-block px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-500 text-sm font-medium mb-6 animate-glow"
+      >
+        Software Developer
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
+        Hey, soy <span
+          class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent"
+          >{personal.name}</span
+        > 👋
+      </h1>
+
+      <p
+        class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+      >
+        {personal.bio}
+      </p>
+
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+      >
+        <a
+          href={personal.cvPath}
+          download
+          class="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold flex items-center gap-2 transition-all hover:scale-105 shadow-lg shadow-indigo-500/25"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            ></path>
+          </svg>
+          Descargar CV
+        </a>
+        <a
+          href="#contact"
+          class="px-8 py-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 font-semibold transition-all hover:bg-indigo-500/5 text-slate-700 dark:text-slate-300"
+        >
+          Contáctame
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="flex-1 flex justify-center lg:justify-end animate-fade-in"
+      style="animation-delay: 0.3s;"
+    >
+      <div class="relative group">
+        <!-- Floating animation container -->
+        <div class="w-64 h-64 md:w-80 md:h-80 relative z-10 animate-float">
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 p-1 group-hover:rotate-6 transition-transform duration-500"
+          >
+            <div
+              class="w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-[#0a0a0a]"
+            >
+              <img
+                src={personal.profileImage}
+                alt={personal.name}
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Decorative blobs -->
+        <div
+          class="absolute -top-4 -right-4 w-12 h-12 bg-indigo-500 rounded-full blur-xl animate-pulse"
+        >
+        </div>
+        <div
+          class="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500 rounded-full blur-xl animate-pulse delay-700"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      box-shadow: 0 0 5px rgba(99, 102, 241, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in-up 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+</style>

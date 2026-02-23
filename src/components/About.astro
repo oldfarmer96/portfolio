@@ -1,0 +1,60 @@
+---
+const stats = [
+  { label: "Años de Experiencia", value: "5+" },
+  { label: "Proyectos Completados", value: "20+" },
+  { label: "Tecnologías Dominadas", value: "15+" },
+];
+---
+
+<section id="about" class="py-24 bg-slate-50/50 dark:bg-white/5 scroll-mt-20">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <div class="lg:w-3/5 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-4">
+          <span class="text-indigo-500">01.</span> Sobre mí
+        </h2>
+        <div
+          class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
+        >
+          <p>
+            ¡Hola! Soy un desarrollador de software con pasión por crear
+            sistemas eficientes y escalables. Mi viaje en la programación
+            comenzó hace más de 5 años y desde entonces he tenido la oportunidad
+            de trabajar en diversos proyectos que han desafiado mis habilidades
+            técnicas y creativas.
+          </p>
+          <p>
+            Me especializo en el desarrollo **Backend** con tecnologías como
+            NestJS y Node.js, pero también disfruto creando experiencias de
+            usuario fluidas utilizando frameworks modernos de frontend. Mi
+            enfoque se centra en escribir código limpio, mantenible y en seguir
+            las mejores prácticas de arquitectura de software.
+          </p>
+          <p>
+            Fuera de la programación, me apasiona aprender sobre nuevas
+            tecnologías, contribuir a proyectos de código abierto y compartir
+            conocimientos con la comunidad.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:w-2/5 grid grid-cols-1 gap-6 w-full">
+        {
+          stats.map((stat, index) => (
+            <div
+              class="p-6 rounded-2xl bg-white dark:bg-[#111111] border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:-translate-y-2 transition-transform duration-300 reveal-item"
+              style={`transition-delay: ${index * 0.1}s`}
+            >
+              <div class="text-3xl font-bold text-indigo-500 mb-2">
+                {stat.value}
+              </div>
+              <div class="text-slate-500 dark:text-slate-500 font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-	<h1>hello world!</h1>
+	<Header />
+	<main class="bg-white dark:bg-[#0a0a0a]" transition:animate="fade">
+		<Hero />
+		<About />
+		<Experience />
+		<Projects />
+		<Skills />
+		<Contact />
+	</main>
+	<Footer />
 </Layout>
+
+<style is:global>
+	section {
+		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+		transition-duration: 500ms;
+	}
+</style>
