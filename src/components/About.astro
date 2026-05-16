@@ -6,12 +6,14 @@ const stats = [
 ];
 ---
 
-<section id="about" class="py-24 bg-[var(--section-tint)]/70 scroll-mt-20">
+<section id="about" class="py-24 bg-(--section-tint)/70 scroll-mt-20">
   <div class="container mx-auto px-6">
     <div class="flex flex-col lg:flex-row gap-16 items-center">
       <div class="lg:w-3/5 reveal">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 flex items-center justify-center lg:justify-start gap-4">
-          <span class="text-[var(--accent-500)]">01.</span> Sobre mi
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-8 flex items-center justify-center lg:justify-start gap-4"
+        >
+          <span class="text-(--accent-500)">01.</span> Sobre mi
         </h2>
         <div
           class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
@@ -42,10 +44,10 @@ const stats = [
         {
           stats.map((stat, index) => (
             <div
-              class="p-6 rounded-2xl bg-[var(--surface-1)] border border-[var(--surface-2)] shadow-xl shadow-slate-900/10 hover:-translate-y-2 transition-transform duration-300 reveal-item"
+              class="p-6 rounded-2xl bg-(--surface-1) border border-(--surface-2) shadow-xl shadow-slate-900/10 hover:-translate-y-2 transition-transform duration-300 reveal-item"
               style={`transition-delay: ${index * 0.1}s`}
             >
-              <div class="text-3xl font-bold text-[var(--accent-500)] mb-2">
+              <div class="text-3xl font-bold text-(--accent-500) mb-2">
                 {stat.value}
               </div>
               <div class="text-slate-500 dark:text-slate-500 font-medium">
