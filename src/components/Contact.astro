@@ -2,11 +2,11 @@
 import { personal } from "../data/personal";
 ---
 
-<section id="contact" class="py-24 bg-slate-50/50 dark:bg-white/5 scroll-mt-20">
+<section id="contact" class="py-24 bg-(--section-tint)/70 scroll-mt-20">
   <div class="container mx-auto px-6 max-w-4xl text-center">
     <h2 class="text-3xl md:text-5xl font-bold mb-8 reveal">
       ¿Tienes un proyecto en <span
-        class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent"
+        class="bg-linear-to-r from-(--accent-500) to-cyan-500 bg-clip-text text-transparent"
         >mente?</span
       >
     </h2>
@@ -24,10 +24,10 @@ import { personal } from "../data/personal";
     >
       <a
         href={`mailto:${personal.email}`}
-        class="flex items-center gap-3 px-8 py-4 rounded-2xl bg-white dark:bg-[#111111] border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 transition-all shadow-xl shadow-slate-200/50 dark:shadow-none group"
+        class="flex items-center gap-3 px-8 py-4 rounded-2xl bg-(--surface-1) border border-(--surface-2) hover:border-(--accent-500) transition-all shadow-xl shadow-slate-900/10 group"
       >
         <svg
-          class="w-6 h-6 text-indigo-500 group-hover:scale-110 transition-transform"
+          class="w-6 h-6 text-(--accent-500) group-hover:scale-110 transition-transform"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -47,7 +47,7 @@ import { personal } from "../data/personal";
           href={personal.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="p-4 rounded-2xl bg-white dark:bg-[#111111] border border-slate-200 dark:border-slate-800 hover:text-indigo-500 transition-all shadow-lg hover:-translate-y-1"
+          class="p-4 rounded-2xl bg-(--surface-1) border border-(--surface-2) hover:text-(--accent-500) transition-all shadow-lg hover:-translate-y-1"
         >
           <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"
             ><path
@@ -59,7 +59,7 @@ import { personal } from "../data/personal";
           href={personal.github}
           target="_blank"
           rel="noopener noreferrer"
-          class="p-4 rounded-2xl bg-white dark:bg-[#111111] border border-slate-200 dark:border-slate-800 hover:text-indigo-500 transition-all shadow-lg hover:-translate-y-1"
+          class="p-4 rounded-2xl bg-(--surface-1) border border-(--surface-2) hover:text-(--accent-500) transition-all shadow-lg hover:-translate-y-1"
         >
           <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"
             ><path

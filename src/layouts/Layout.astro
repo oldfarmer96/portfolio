@@ -4,137 +4,125 @@ import { personal } from "../data/personal";
 import "../styles/global.css";
 
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
 }
 
 const {
-	title = `${personal.name} | ${personal.title}`,
-	description = personal.bio,
+  title = `${personal.name} | ${personal.title}`,
+  description = personal.bio,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/icono.svg" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/icono.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-		<!-- SEO -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
 
-		<ClientRouter />
+    <ClientRouter />
 
-		<script is:inline>
-			const savedTheme = window.localStorage.getItem("theme");
-			const theme =
-				savedTheme === "light" ||
-				savedTheme === "dark" ||
-				savedTheme === "system"
-					? savedTheme
-					: "system";
+    <script is:inline>
+      const savedTheme = window.localStorage.getItem("theme");
+      const theme =
+        savedTheme === "light" ||
+        savedTheme === "dark" ||
+        savedTheme === "system"
+          ? savedTheme
+          : "system";
 
-			const isDark =
-				theme === "dark" ||
-				(theme === "system" &&
-					window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const isDark =
+        theme === "dark" ||
+        (theme === "system" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-			document.documentElement.classList.toggle("dark", isDark);
-			document.documentElement.dataset.theme = theme;
-			window.localStorage.setItem("theme", theme);
-		</script>
+      document.documentElement.classList.toggle("dark", isDark);
+      document.documentElement.dataset.theme = theme;
+      window.localStorage.setItem("theme", theme);
+    </script>
 
-		<script>
-			function setupReveal() {
-				const observerOptions = {
-					root: null,
-					rootMargin: "0px",
-					threshold: 0.1,
-				};
+    <script>
+      function setupReveal() {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
 
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add("active");
-							// Optional: unobserve after revealing
-							// observer.unobserve(entry.target);
-						}
-					});
-				}, observerOptions);
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              // Optional: unobserve after revealing
+              // observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
 
-				const revealElements = document.querySelectorAll(
-					".reveal, .reveal-up, .reveal-left, .reveal-item",
-				);
-				revealElements.forEach((el) => observer.observe(el));
-			}
+        const revealElements = document.querySelectorAll(
+          ".reveal, .reveal-up, .reveal-left, .reveal-item",
+        );
+        revealElements.forEach((el) => observer.observe(el));
+      }
 
-			// Initialize on load and on view transitions
-			document.addEventListener("astro:page-load", setupReveal);
-		</script>
-	</head>
-	<body
-		class="bg-[#f8fafc] text-[#0f172a] dark:bg-[#0a0a0a] dark:text-[#e2e8f0] selection:bg-indigo-500 selection:text-white"
-	>
-		<slot />
-	</body>
+      // Initialize on load and on view transitions
+      document.addEventListener("astro:page-load", setupReveal);
+    </script>
+  </head>
+  <body class="selection:bg-(--accent-500) selection:text-white">
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		--accent: 99, 102, 241;
-		--accent-light: 129, 140, 248;
-		--accent-dark: 79, 70, 229;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
+  * {
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.1s ease;
+  }
 
-	* {
-		transition:
-			background-color 0.3s ease,
-			border-color 0.3s ease,
-			color 0.1s ease;
-	}
+  /* Global Reveal Animations */
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-item {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-	html {
-		font-family: "Inter", system-ui, sans-serif;
-	}
+  .reveal {
+    transform: translateY(20px);
+  }
 
-	/* Global Reveal Animations */
-	.reveal,
-	.reveal-up,
-	.reveal-left,
-	.reveal-item {
-		opacity: 0;
-		transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-	}
+  .reveal-up {
+    transform: translateY(40px);
+  }
 
-	.reveal {
-		transform: translateY(20px);
-	}
+  .reveal-left {
+    transform: translateX(-40px);
+  }
 
-	.reveal-up {
-		transform: translateY(40px);
-	}
-
-	.reveal-left {
-		transform: translateX(-40px);
-	}
-
-	.reveal.active,
-	.reveal-up.active,
-	.reveal-left.active,
-	.reveal-item.active {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
+  .reveal.active,
+  .reveal-up.active,
+  .reveal-left.active,
+  .reveal-item.active {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 </style>
