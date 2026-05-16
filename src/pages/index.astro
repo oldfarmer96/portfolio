@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import FloatingDock from "../components/FloatingDock.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Experience from "../components/Experience.astro";
@@ -7,12 +7,10 @@ import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <Header />
-  <main class="bg-white dark:bg-[#0a0a0a]" transition:animate="fade">
+  <main class="bg-[var(--surface-0)]" transition:animate="fade">
     <Hero />
     <About />
     <Experience />
@@ -20,7 +18,7 @@ import Footer from "../components/Footer.astro";
     <Skills />
     <Contact />
   </main>
-  <Footer />
+  <FloatingDock />
 </Layout>
 
 <style is:global>
