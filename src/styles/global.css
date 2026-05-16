@@ -139,6 +139,10 @@ html.dark {
   color: var(--accent-500);
 }
 
+.dock-theme-tone {
+  color: var(--accent-500);
+}
+
 @media (max-width: 720px) {
   .dock-shell {
     gap: 0.15rem;
