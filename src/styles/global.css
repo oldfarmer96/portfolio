@@ -139,18 +139,6 @@ html.dark {
   color: var(--accent-500);
 }
 
-.dock-theme {
-  width: auto;
-  padding: 0 0.2rem;
-}
-
-.dock-theme [data-theme-trigger] {
-  border-radius: 999px;
-  width: 2.4rem;
-  height: 2.4rem;
-  padding: 0;
-}
-
 @media (max-width: 720px) {
   .dock-shell {
     gap: 0.15rem;
