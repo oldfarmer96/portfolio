@@ -12,8 +12,8 @@ export const projects: Project[] = [
     title: "API Facturación Electrónica (SUNAT)",
     description:
       "API RESTful diseñada para desarrolladores que buscan implementar facturación electrónica en Perú. Abstrae la complejidad de la conexión directa con SUNAT, ofreciendo endpoints limpios y documentación fácil de implementar.",
-    url: "#", // Reemplaza con tu link
-    github: "https://github.com/tu-usuario",
+    url: "#",
+    github: "#",
     tags: ["NestJS", "TypeScript", "PostgreSQL", "Docker", "Redis"],
     image: "/projects/fact-damn.webp",
   },
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description:
       "Sistema de ventas y gestión de inventario especializado para ferreterías. Incluye control de stock detallado, caja, reportes y consumo directo de API para emisión de comprobantes electrónicos.",
     url: "#",
-    github: "https://github.com/tu-usuario",
+    github: "#",
     tags: ["Next.js", "React", "Tailwind CSS", "Prisma"],
     image: "/projects/ferre.webp",
   },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     description:
       "Plataforma integral para administración de farmacias. Cuenta con alertas de caducidad, control de lotes, punto de venta rápido (POS) e integración de facturación electrónica.",
     url: "#",
-    github: "https://github.com/tu-usuario",
+    github: "#",
     tags: ["Vue.js", "Express", "MySQL"],
     image: "/projects/farmacia.webp",
   },
