@@ -7,21 +7,10 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    company: "Tech Solutions S.A.C.",
-    role: "Senior Backend Developer",
-    dates: "2022 - Presente",
-    description: "Liderazgo técnico en el desarrollo de microservicios utilizando NestJS y PostgreSQL. Implementación de CI/CD con GitHub Actions y despliegue en contenedores Docker."
+    company: "Desarrollador Independiente (Freelance)",
+    role: "Fullstack Software Developer",
+    dates: "2026 - Presente",
+    description:
+      "Desarrollo integral de software a medida para clientes privados. Creación de un sistema de ventas y gestión para restaurantes, y un sistema de control de entrada y salida de vehículos. Encargado de todo el ciclo del proyecto: toma de requerimientos, diseño de base de datos, programación frontend/backend, despliegue y mantenimiento.",
   },
-  {
-    company: "Dev Agency",
-    role: "Fullstack Developer",
-    dates: "2020 - 2022",
-    description: "Desarrollo de aplicaciones web robustas con React y Node.js. Optimización de consultas SQL y diseño de APIs RESTful siguiendo mejores prácticas."
-  },
-  {
-    company: "Startup Innovate",
-    role: "Junior Developer",
-    dates: "2018 - 2020",
-    description: "Mantenimiento y desarrollo de nuevas funcionalidades para una plataforma de e-commerce. Colaboración en el diseño de la arquitectura de base de datos."
-  }
 ];

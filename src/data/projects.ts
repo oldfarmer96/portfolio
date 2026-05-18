@@ -9,27 +9,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "E-Commerce API",
-    description: "Una API robusta para una plataforma de comercio electrónico construida con NestJS, TypeORM y PostgreSQL. Incluye autenticación JWT y pagos con Stripe.",
-    url: "https://demo-ecommerce.example.com",
-    github: "https://github.com/juanperez/ecommerce-api",
-    tags: ["NestJS", "PostgreSQL", "Docker", "TypeScript"],
-    image: "https://picsum.photos/seed/ecommerce/600/400"
+    title: "API Facturación Electrónica (SUNAT)",
+    description:
+      "API RESTful diseñada para desarrolladores que buscan implementar facturación electrónica en Perú. Abstrae la complejidad de la conexión directa con SUNAT, ofreciendo endpoints limpios y documentación fácil de implementar.",
+    url: "#", // Reemplaza con tu link
+    github: "https://github.com/tu-usuario",
+    tags: ["NestJS", "TypeScript", "PostgreSQL", "Docker", "Redis"],
+    image: "/projects/fact-damn.webp",
   },
   {
-    title: "Task Manager Pro",
-    description: "Aplicación de gestión de tareas con sincronización en tiempo real usando WebSockets. Frontend desarrollado con React y Tailwind CSS.",
-    url: "https://taskpro.example.com",
-    github: "https://github.com/juanperez/task-manager",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    image: "https://picsum.photos/seed/taskpro/600/400"
+    title: "ERP Ferreterías & Facturación",
+    description:
+      "Sistema de ventas y gestión de inventario especializado para ferreterías. Incluye control de stock detallado, caja, reportes y consumo directo de API para emisión de comprobantes electrónicos.",
+    url: "#",
+    github: "https://github.com/tu-usuario",
+    tags: ["Next.js", "React", "Tailwind CSS", "Prisma"],
+    image: "/projects/ferre.webp",
   },
   {
-    title: "Portfolio Minimalista",
-    description: "Este mismo sitio web, construido con Astro y Tailwind CSS para un rendimiento excepcional y SEO optimizado.",
-    url: "https://portfolio.example.com",
-    github: "https://github.com/juanperez/portfolio",
-    tags: ["Astro", "Tailwind CSS", "View Transitions"],
-    image: "https://picsum.photos/seed/portfolio/600/400"
-  }
+    title: "FarmaSys - Gestión de Farmacias",
+    description:
+      "Plataforma integral para administración de farmacias. Cuenta con alertas de caducidad, control de lotes, punto de venta rápido (POS) e integración de facturación electrónica.",
+    url: "#",
+    github: "https://github.com/tu-usuario",
+    tags: ["Vue.js", "Express", "MySQL"],
+    image: "/projects/farmacia.webp",
+  },
 ];
